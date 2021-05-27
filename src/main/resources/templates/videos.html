@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Request took <span th:text="${requestTime}"/> ms
+    <div th:if="${videos}" class="videos">
+        <div th:each="video: ${videos}">
+            <span th:text="${video.name}"> ms</span> - <a th:href="@{/videos/{name}(name=${video.name})}">More info</a>
+        </div>
+    </div>
+</body>
+</html>
